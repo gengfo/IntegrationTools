@@ -9,7 +9,7 @@ public class MainWeekly {
         try {
 
             String artReportRootDir = args[0];
-            DailyHelper.read(artReportRootDir);
+            DailyHelper.readIpsAvg(artReportRootDir);
 
         } catch (Exception e) {
 

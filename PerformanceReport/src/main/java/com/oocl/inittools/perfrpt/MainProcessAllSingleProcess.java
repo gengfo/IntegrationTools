@@ -25,7 +25,7 @@ public class MainProcessAllSingleProcess {
 
 			// output the process which differ more than percentage
 			ArtModelHelper.outputArtRecordsAvgInRange(artExcelSrcDir,
-					ARTExcelConstant.WS, "20120327", "20120327", "20120328",
+					ARTExcelConstant.IPS_WS, "20120327", "20120327", "20120328",
 					"20120328", "rangeAvgAll-" + System.currentTimeMillis()
 							+ ".xls");
 
@@ -40,7 +40,7 @@ public class MainProcessAllSingleProcess {
 			String to2 = "20120325";
 
 			ArtModelHelper.outputArtRecordsAvgInRangeWithPctFilter(
-					artExcelSrcDir, ARTExcelConstant.WS, from1,
+					artExcelSrcDir, ARTExcelConstant.IPS_WS, from1,
 					to1, from2, to2, 20.0, from1 + "-" + to1
 							+ "-cmp-" + from2 + "-" + to2 + "rangeAvgPct-"
 							+ System.currentTimeMillis() + ".xls");

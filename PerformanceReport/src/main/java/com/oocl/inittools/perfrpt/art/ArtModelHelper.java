@@ -183,17 +183,17 @@ public class ArtModelHelper {
 			List<Model> modelList) {
 
 		List<Model> clientModels = getModelListByType(modelList,
-				ARTExcelConstant.CLIENT);
+				ARTExcelConstant.IPS_CLIENT);
 		ExcelHelper
-				.fillBookByModels(wb1, ARTExcelConstant.CLIENT, clientModels);
+				.fillBookByModels(wb1, ARTExcelConstant.IPS_CLIENT, clientModels);
 
 		List<Model> wsModels = getModelListByType(modelList,
-				ARTExcelConstant.WS);
-		ExcelHelper.fillBookByModels(wb1, ARTExcelConstant.WS, wsModels);
+				ARTExcelConstant.IPS_WS);
+		ExcelHelper.fillBookByModels(wb1, ARTExcelConstant.IPS_WS, wsModels);
 
 		List<Model> bkModels = getModelListByType(modelList,
-				ARTExcelConstant.BK);
-		ExcelHelper.fillBookByModels(wb1, ARTExcelConstant.BK, bkModels);
+				ARTExcelConstant.IPS_BK);
+		ExcelHelper.fillBookByModels(wb1, ARTExcelConstant.IPS_BK, bkModels);
 
 	}
 

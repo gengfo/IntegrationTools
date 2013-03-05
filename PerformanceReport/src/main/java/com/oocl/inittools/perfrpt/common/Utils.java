@@ -15,7 +15,7 @@ public class Utils {
 	public static String getDate(String sourceFile) {
 	
 		return sourceFile.substring(
-				sourceFile.length() - "yyyymmdd.xls".length(),
+				sourceFile.length() - (Constants.DATE_FORMAT+".xls").length(),
 				sourceFile.length() - ".xls".length());
 	
 	}
