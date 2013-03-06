@@ -1,7 +1,10 @@
 1. EmailAttachmentUtilTest to get the art attachment from email
 2. MainProcessAllSingleProcess to calculate the average daily performance data
-3. 
+3. MainWeekly //D:\ToDel\mailSec\desExcles\IPS  calculate the weekly header
+4. merge to template file  //MergeReportTest.java
 
+
+--. push the excel files to git server
 
 
 create table in oracle db

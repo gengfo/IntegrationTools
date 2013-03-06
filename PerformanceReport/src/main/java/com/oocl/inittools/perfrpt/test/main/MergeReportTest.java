@@ -1,8 +1,8 @@
-package com.oocl.inittools.perfrpt;
+package com.oocl.inittools.perfrpt.test.main;
 
 import com.oocl.inittools.perfrpt.daily.DailyHelper;
 
-public class MainWeekly {
+public class MergeReportTest {
 
     public static void main(String args[]) {
 
