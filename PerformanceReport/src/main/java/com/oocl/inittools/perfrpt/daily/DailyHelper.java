@@ -13,10 +13,10 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import com.oocl.inittools.perfrpt.common.ARTExcelConstant;
-import com.oocl.inittools.perfrpt.common.ExcelHelper;
 import com.oocl.inittools.perfrpt.common.FileHelper;
 import com.oocl.inittools.perfrpt.common.Model;
 import com.oocl.inittools.perfrpt.common.Utils;
+import com.oocl.inittools.perfrpt.excel.ExcelHelper;
 
 public class DailyHelper {
 
@@ -50,7 +50,6 @@ public class DailyHelper {
             String wsCnt = ExcelHelper.getIpsWsCntHeader(fileName);
             String wsTime = ExcelHelper.getIpsWsTimeHeader(fileName);
             String wsAvg = ExcelHelper.getIpsWsAvgHeader(fileName);
-            ;
 
             wsCntTotal = Integer.parseInt(wsCnt) + wsCntTotal;
             wsTimeTotal = Integer.parseInt(wsTime) + wsTimeTotal;
@@ -65,7 +64,7 @@ public class DailyHelper {
             System.out.println(fileName + " rcCnt " + rcCnt + " rcTime " + rcTime + " rcAvg " + rcAvg + " wsCnt "
                     + wsCnt + " wsTime " + wsTime + " wsAvg " + wsAvg + " bkCnt " + bkCnt + " bkTime " + bkTime
                     + " bkAvg " + bkAvg);
-
+            
         }
 
         System.out.println(rcCntTotal);

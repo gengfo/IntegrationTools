@@ -1,4 +1,4 @@
-package com.oocl.inittools.perfrpt.common;
+package com.oocl.inittools.perfrpt.excel;
 
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -12,9 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRichTextString;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import com.oocl.inittools.perfrpt.common.ARTExcelConstant;
+import com.oocl.inittools.perfrpt.common.AvgModel;
+import com.oocl.inittools.perfrpt.common.AvgOutputBean;
+import com.oocl.inittools.perfrpt.common.Model;
+import com.oocl.inittools.perfrpt.common.Utils;
 
 public class ExcelHelper {
 
@@ -52,6 +59,75 @@ public class ExcelHelper {
 
     public static String getIpsBkAvgHeader(String fileName) {
         return ExcelHelper.getCellValueFromExcelFile(fileName, ARTExcelConstant.IPS_BK_SHEET_NO, 4, 1);
+    }
+
+    public static HSSFWorkbook getWorkBook(String filePath) {
+        try {
+            FileInputStream fileIn = new FileInputStream(filePath);
+            HSSFWorkbook wb = new HSSFWorkbook(fileIn);
+            fileIn.close();
+            return wb;
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
+
+    public static void fillCellValueToExcelFile(String destXlsFile, int sheetno, int rowNo, int columnNo, String value) {
+
+        HSSFWorkbook wb = getWorkBook(destXlsFile);
+        HSSFSheet sheet = wb.getSheetAt(sheetno);
+        HSSFCell cell=getCell(sheet,rowNo,(short)columnNo);
+        
+        HSSFRichTextString str=new HSSFRichTextString(value);
+        cell.setCellValue(str);
+        
+        saveWorkBook(wb, destXlsFile);
+
+    }
+    
+    
+    //TODO GENGFO
+    
+    public static void fillCellValueToExcelFile(String destXlsFile, String srcContentFile, String positionConfigFile) {
+
+        
+        //
+//        HSSFWorkbook wb = getWorkBook(destXlsFile);
+//        HSSFSheet sheet = wb.getSheetAt(sheetno);
+//        HSSFCell cell=getCell(sheet,rowNo,(short)columnNo);
+//        
+//        HSSFRichTextString str=new HSSFRichTextString(value);
+//        cell.setCellValue(str);
+//        
+//        saveWorkBook(wb, destXlsFile);
+
+    }
+    
+    public static HSSFCell getCell(HSSFSheet sheet,int rowIndex,short columnIndex){
+        HSSFRow row = sheet.getRow(rowIndex);
+        //if (row == null) {
+        //    row = sheet.createRow(rowIndex);
+       // }
+        HSSFCell cell = row.getCell(columnIndex);
+        if (cell == null) {
+            cell = row.createCell((short) columnIndex);
+        }
+        return cell;
+    }
+    
+    
+
+    public static void saveWorkBook(HSSFWorkbook wb, String filePath) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(filePath);
+            wb.write(fileOut);
+            fileOut.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     public static String getCellValueFromExcelFile(String sourceFile, int sheetno, int rowNo, int columnNo) {
@@ -158,49 +234,47 @@ public class ExcelHelper {
 
     public static List<Model> getIpsRowDataFromXlsSheet(HSSFSheet sheet, String fileDateString, int firstRow,
             int requestNameCn, int countCn, int maxCn, int minCn, int avgCn, int totalCn, String type) {
-        
-        
-     return    getRowDataFromXlsSheet( sheet,  fileDateString,  firstRow,
-                 requestNameCn,  countCn,  maxCn,  minCn,  avgCn,  totalCn,  type, 2);
 
-//        List<Model> modelList = new ArrayList<Model>();
-//
-//        HSSFRow hssfRow = sheet.getRow(firstRow);
-//        boolean flag = (null != hssfRow.getCell(2));
-//
-//        int nextRow = firstRow;
-//        while (flag) {
-//
-//            String requestName = ExcelHelper.getColumnValue(hssfRow, requestNameCn);
-//            String count = ExcelHelper.getColumnValue(hssfRow, countCn);
-//            String max = ExcelHelper.getColumnValue(hssfRow, maxCn);
-//            String min = ExcelHelper.getColumnValue(hssfRow, minCn);
-//            String avg = ExcelHelper.getColumnValue(hssfRow, avgCn);
-//            String total = ExcelHelper.getColumnValue(hssfRow, totalCn);
-//
-//            Model model = new Model(requestName, count, max, min, avg, total, fileDateString, type);
-//
-//            modelList.add(model);
-//
-//            nextRow = nextRow + 1;
-//            hssfRow = sheet.getRow(nextRow);
-//            // System.out.println("--------------TO get row " + nextRow);
-//            flag = (null != hssfRow && null != hssfRow.getCell(2));
-//        }
-//
-//        // HSSFCell nameCell = hssfRow.getCell(columnNo);
-//
-//        return modelList;
+        return getRowDataFromXlsSheet(sheet, fileDateString, firstRow, requestNameCn, countCn, maxCn, minCn, avgCn,
+                totalCn, type, 2);
+
+        // List<Model> modelList = new ArrayList<Model>();
+        //
+        // HSSFRow hssfRow = sheet.getRow(firstRow);
+        // boolean flag = (null != hssfRow.getCell(2));
+        //
+        // int nextRow = firstRow;
+        // while (flag) {
+        //
+        // String requestName = ExcelHelper.getColumnValue(hssfRow, requestNameCn);
+        // String count = ExcelHelper.getColumnValue(hssfRow, countCn);
+        // String max = ExcelHelper.getColumnValue(hssfRow, maxCn);
+        // String min = ExcelHelper.getColumnValue(hssfRow, minCn);
+        // String avg = ExcelHelper.getColumnValue(hssfRow, avgCn);
+        // String total = ExcelHelper.getColumnValue(hssfRow, totalCn);
+        //
+        // Model model = new Model(requestName, count, max, min, avg, total, fileDateString, type);
+        //
+        // modelList.add(model);
+        //
+        // nextRow = nextRow + 1;
+        // hssfRow = sheet.getRow(nextRow);
+        // // System.out.println("--------------TO get row " + nextRow);
+        // flag = (null != hssfRow && null != hssfRow.getCell(2));
+        // }
+        //
+        // // HSSFCell nameCell = hssfRow.getCell(columnNo);
+        //
+        // return modelList;
     }
-    
-    
+
     public static List<Model> getArpRowDataFromXlsSheet(HSSFSheet sheet, String fileDateString, int firstRow,
             int requestNameCn, int countCn, int maxCn, int minCn, int avgCn, int totalCn, String type) {
 
-        return    getRowDataFromXlsSheet( sheet,  fileDateString,  firstRow,
-                requestNameCn,  countCn,  maxCn,  minCn,  avgCn,  totalCn,  type, 2);
+        return getRowDataFromXlsSheet(sheet, fileDateString, firstRow, requestNameCn, countCn, maxCn, minCn, avgCn,
+                totalCn, type, 2);
     }
-    
+
     public static List<Model> getRowDataFromXlsSheet(HSSFSheet sheet, String fileDateString, int firstRow,
             int requestNameCn, int countCn, int maxCn, int minCn, int avgCn, int totalCn, String type, int emptyRow) {
 
@@ -233,9 +307,6 @@ public class ExcelHelper {
 
         return modelList;
     }
-    
-    
-
 
     public static String getColumnValue(HSSFRow hssfRow, int columnNo) {
         String result = "";
@@ -492,27 +563,27 @@ public class ExcelHelper {
 
         HSSFSheet rcSheet = workbook.getSheetAt(ARTExcelConstant.IPS_RC_SHEET_NO);
 
-        List<Model> rcModelList = getIpsRowDataFromXlsSheet(rcSheet, fileDateString, ARTExcelConstant.RC_FIRST_ROW_NO,
-                ARTExcelConstant.IPS_RC_COLUMN_REQUEST_NAME, ARTExcelConstant.IPS_RC_COLUMN_COUNT,
-                ARTExcelConstant.IPS_RC_COLUMN_MAX_ELAPSED_TIME, ARTExcelConstant.IPS_RC_COLUMN_MIN_ELAPSED_TIME,
-                ARTExcelConstant.IPS_RC_COLUMN_AVG_ELAPSED_TIME, ARTExcelConstant.IPS_RC_COLUMN_TOTAL_ELAPSED_TIME,
-                ARTExcelConstant.IPS_CLIENT);
+        List<Model> rcModelList = getIpsRowDataFromXlsSheet(rcSheet, fileDateString,
+                ARTExcelConstant.RC_FIRST_ROW_NO, ARTExcelConstant.IPS_RC_COLUMN_REQUEST_NAME,
+                ARTExcelConstant.IPS_RC_COLUMN_COUNT, ARTExcelConstant.IPS_RC_COLUMN_MAX_ELAPSED_TIME,
+                ARTExcelConstant.IPS_RC_COLUMN_MIN_ELAPSED_TIME, ARTExcelConstant.IPS_RC_COLUMN_AVG_ELAPSED_TIME,
+                ARTExcelConstant.IPS_RC_COLUMN_TOTAL_ELAPSED_TIME, ARTExcelConstant.IPS_CLIENT);
         modelList.addAll(rcModelList);
 
         HSSFSheet wsSheet = workbook.getSheetAt(ARTExcelConstant.IPS_WS_SHEET_NO);
-        List<Model> wsModelList = getIpsRowDataFromXlsSheet(wsSheet, fileDateString, ARTExcelConstant.WS_FIRST_ROW_NO,
-                ARTExcelConstant.IPS_WS_COLUMN_REQUEST_NAME, ARTExcelConstant.IPS_WS_COLUMN_COUNT,
-                ARTExcelConstant.IPS_WS_COLUMN_MAX_ELAPSED_TIME, ARTExcelConstant.IPS_WS_COLUMN_MIN_ELAPSED_TIME,
-                ARTExcelConstant.IPS_WS_COLUMN_AVG_ELAPSED_TIME, ARTExcelConstant.IPS_WS_COLUMN_TOTAL_ELAPSED_TIME,
-                ARTExcelConstant.IPS_WS);
+        List<Model> wsModelList = getIpsRowDataFromXlsSheet(wsSheet, fileDateString,
+                ARTExcelConstant.WS_FIRST_ROW_NO, ARTExcelConstant.IPS_WS_COLUMN_REQUEST_NAME,
+                ARTExcelConstant.IPS_WS_COLUMN_COUNT, ARTExcelConstant.IPS_WS_COLUMN_MAX_ELAPSED_TIME,
+                ARTExcelConstant.IPS_WS_COLUMN_MIN_ELAPSED_TIME, ARTExcelConstant.IPS_WS_COLUMN_AVG_ELAPSED_TIME,
+                ARTExcelConstant.IPS_WS_COLUMN_TOTAL_ELAPSED_TIME, ARTExcelConstant.IPS_WS);
         modelList.addAll(wsModelList);
 
         HSSFSheet bkSheet = workbook.getSheetAt(ARTExcelConstant.IPS_BK_SHEET_NO);
-        List<Model> bkModelList = getIpsRowDataFromXlsSheet(bkSheet, fileDateString, ARTExcelConstant.BK_FIRST_ROW_NO,
-                ARTExcelConstant.BK_COLUMN_REQUEST_NAME, ARTExcelConstant.BK_COLUMN_COUNT,
-                ARTExcelConstant.BK_COLUMN_MAX_ELAPSED_TIME, ARTExcelConstant.BK_COLUMN_MIN_ELAPSED_TIME,
-                ARTExcelConstant.BK_COLUMN_AVG_ELAPSED_TIME, ARTExcelConstant.BK_COLUMN_TOTAL_ELAPSED_TIME,
-                ARTExcelConstant.IPS_BK);
+        List<Model> bkModelList = getIpsRowDataFromXlsSheet(bkSheet, fileDateString,
+                ARTExcelConstant.BK_FIRST_ROW_NO, ARTExcelConstant.BK_COLUMN_REQUEST_NAME,
+                ARTExcelConstant.BK_COLUMN_COUNT, ARTExcelConstant.BK_COLUMN_MAX_ELAPSED_TIME,
+                ARTExcelConstant.BK_COLUMN_MIN_ELAPSED_TIME, ARTExcelConstant.BK_COLUMN_AVG_ELAPSED_TIME,
+                ARTExcelConstant.BK_COLUMN_TOTAL_ELAPSED_TIME, ARTExcelConstant.IPS_BK);
 
         modelList.addAll(bkModelList);
 
@@ -554,7 +625,7 @@ public class ExcelHelper {
     public static void outputListToTxtFile(List<Model> mList, String toFile) {
 
         StringBuffer sb = new StringBuffer();
-        
+
         sb.append(Model.toHeaderString());
         sb.append("\n");
 

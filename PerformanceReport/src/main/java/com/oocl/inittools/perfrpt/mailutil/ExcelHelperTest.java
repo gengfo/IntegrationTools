@@ -2,7 +2,7 @@ package com.oocl.inittools.perfrpt.mailutil;
 
 import java.io.File;
 
-import com.oocl.inittools.perfrpt.common.ExcelHelper;
+import com.oocl.inittools.perfrpt.excel.ExcelHelper;
 
 public class ExcelHelperTest {
     

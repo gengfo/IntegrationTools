@@ -1,9 +1,9 @@
-package com.oocl.inittools.perfrpt.test.main;
+package com.oocl.inittools.perfrpt.test;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import com.oocl.inittools.perfrpt.common.ExcelHelper;
+import com.oocl.inittools.perfrpt.excel.ExcelHelper;
 import com.oocl.inittools.perfrpt.mailutil.EmailAttachmentUtil;
 import com.oocl.inittools.perfrpt.mailutil.MailAccount;
 
@@ -14,8 +14,6 @@ public class CombineExcelTest {
     
     
     public static void main(String args[]){
-        
-        
         
         
         MailAccount ma = new MailAccount();
