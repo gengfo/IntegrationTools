@@ -1,0 +1,116 @@
+
+
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    .gitattributes
+#	deleted:    .gitignore
+#	deleted:    PerformanceReport/build.properties
+#	deleted:    PerformanceReport/build.xml
+#	deleted:    PerformanceReport/gengfo-readme.txt
+#	deleted:    PerformanceReport/lib/activation.jar
+#	deleted:    PerformanceReport/lib/log4j-1.2.12.jar
+#	deleted:    PerformanceReport/lib/mail-1.4.jar
+#	deleted:    PerformanceReport/lib/poi-3.2-FINAL.jar
+#	deleted:    PerformanceReport/pom.xml
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/MainProcessAllSingleProcess.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/MainWeekly.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/art/ArtModelHelper.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/ARTExcelConstant.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/AvgModel.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/AvgOutputBean.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/ComplexNumber.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/Constants.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/FileHelper.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/Model.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/Sorter.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/common/Utils.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/daily/DailyHelper.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/excel/ExcelHelper.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/mailutil/EmailAttachmentUtil.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/mailutil/ExcelHelperTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/mailutil/InstallCert.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/mailutil/MailAccount.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/CombineExcelTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/FillCellValueToExcelFileTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/GoogleMailTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/PropertyLoadingTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameGoogle.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameNonProd.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFramePRD.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameToGoogle1.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/Test.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/gmail/Test1.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/main/EmailAttachmentUtilTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/main/MergeReportTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/main/RetrieveDailyArtRecords4ArpTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/test/main/RetrieveDailyArtRecords4IpsTest.java
+#	deleted:    PerformanceReport/src/main/java/com/oocl/inittools/perfrpt/utils/PropertyLoading.java
+#	deleted:    PerformanceReport/src/main/resources/fileSettings.txt
+#	deleted:    PerformanceReport/src/main/resources/nextToHandleData.txt
+#	deleted:    PerformanceReport/src/main/resources/performance_report.xls
+#	deleted:    PerformanceReport/src/main/resources/performance_report_template.xls
+#	deleted:    PerformanceReport/src/main/resources/rowColumnMatching.txt
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/MainProcessAllSingleProcess.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/MainWeekly.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/art/ArtModelHelper.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/ARTExcelConstant.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/AvgModel.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/AvgOutputBean.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/ComplexNumber.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Constants.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/FileHelper.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Model.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$2.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$3.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$Comparable.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$Comparer.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$Test$1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$Test$2.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$Test$SortableComplexNumber.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter$Test.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Sorter.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/common/Utils.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/daily/DailyHelper.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/excel/ExcelHelper.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/mailutil/EmailAttachmentUtil.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/mailutil/ExcelHelperTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/mailutil/InstallCert$SavingTrustManager.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/mailutil/InstallCert.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/mailutil/MailAccount.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/CombineExcelTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/FillCellValueToExcelFileTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/GoogleMailTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/PropertyLoadingTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameGoogle.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameNonProd$1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameNonProd$2.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameNonProd$3.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameNonProd.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFramePRD.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameToGoogle1$1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameToGoogle1$2.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameToGoogle1$3.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/ReceiveMailFrameToGoogle1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/Test$1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/Test$2.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/Test$3.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/Test.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/gmail/Test1.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/main/EmailAttachmentUtilTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/main/MergeReportTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/main/RetrieveDailyArtRecords4ArpTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/test/main/RetrieveDailyArtRecords4IpsTest.class
+#	deleted:    PerformanceReport/target/classes/com/oocl/inittools/perfrpt/utils/PropertyLoading.class
+#	deleted:    PerformanceReport/target/classes/fileSettings.txt
+#	deleted:    PerformanceReport/target/classes/nextToHandleData.txt
+#	deleted:    PerformanceReport/target/classes/performance_report.xls
+#	deleted:    PerformanceReport/target/classes/performance_report_template.xls
+#	deleted:    PerformanceReport/target/classes/rowColumnMatching.txt
+#
+
