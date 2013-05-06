@@ -1,6 +1,0 @@
-#to fill data
-#sourceFile Sheet1 2 1 -> toFile Sheet1 2 1
-#D:\ToDel\mailSec\ARPDailyReport.2013-01-19.xls 2 1 -> D:\ToDel\mailSec\toFile.xls Sheet1 2 1
-#D:\ToDel\mailSec\ARPDailyReport.2013-01-20.xls 3 1 -> D:\ToDel\mailSec\toFile.xls Sheet1 3 1
-2 1 -> 2
-3 1 -> 3

@@ -1,6 +1,0 @@
-#srcFileName sample: ${srcFileRootPath}\{srcFilePattern}.yyyy-mm-dd.xls -> \D:\ToDel\mailSec\srcExcels\ARPDailyReport.2013-01-19.xls
-srcFileRootPath=D:\ToDel\mailSec\srcExcels
-srcFilePattern=ARPDailyReport
-#desFileName sample: $srcFileRootPath\${desExcelName}.xls -> \D:\ToDel\mailSec\desExcles\toFile.xls
-desFileRootPath=D:\ToDel\mailSec\desExcels
-desExcelName=toFile.xls
